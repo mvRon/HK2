@@ -1,25 +1,33 @@
-class Personality:
-    def __init__(self, name, age, address) -> None:
-        self.name = name
-        self.age = age
-        self.address = address
-    
-    def show(self):
-        print("Full name:",self.name)
-        print("Age:",self.age)
-        print("Address:",self.address)
-        
+class QLCD:
+    def __init__(self, cd_name, singer_name, amout, cost):
+        self.cd_name = cd_name
+        self.singer_name = singer_name
+        self.amount = amout
+        self.cost = cost
 
+    def show(self):
+        print(f"{cd_name} | {singer_name} | {amount} | {cost}")
+    
+    def Total(self):
+        self.total += self.cost
+        return self.total
+    
+    
 if __name__ == "__main__":
-    print("=====INPUT=====")
-    name = input("Your name:")
-    age = int(input("Your age:"))
-    address = input("Your address:")
-    print("=====OUTPUT=====")
-    call = Personality(name, age, address)
-    call.show()
-    
-    
-    
-    
-    
+    choice = 1
+    CD_List = []
+    while choice==1:
+        cd_name = input("CD Name:")
+        singer_name = input("Singer's Name:")
+        amount = input("Amount:")
+        cost = input("Cost:")
+        print("-----CD List-----")
+        CD = QLCD(cd_name,singer_name,amount,cost)
+        CD_List.append(CD)
+        CD.show()
+        choice = int(input("Choices (1:continue/0:stop): "))
+        
+    print(CD_List[0])
+
+
+
